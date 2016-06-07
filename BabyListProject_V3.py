@@ -3,6 +3,7 @@
 # V3 - added while loops to add and del functions
 # V3 - adde save list function
 
+
 # #TO FIGURE OUT:
 # # should I use dict instead of lists? or tuples since i don't want the age and vacation list edited?
 # #age_list_1 and age_list_2 have similar items, is there a way to not duplicate items in list? 
@@ -23,21 +24,27 @@ vacationlist_cold = ["warm jacket", "boots", "mittens", "rain jacket", "warm hat
 childlist = []  # this custom list for child
 
 def child_age_question():	#stores this in global so I can access it later		
+	valid_ages = [0,1, 2,3,4,5,6,7,8,9,10,11,12]
 	global childage
-	childage = int(raw_input ("How old is your child (in months)? "))
-	if childage >=0 and childage <=12:
-		return childage
-	else:
-		print "Sorry, packing list only for children 0-12 months old. " 
+	while (True):
+		childage = int(raw_input ("How old is your child (in months)? "))
+		if childage in valid_ages:
+			return childage
+			break
+		else:
+			print "Sorry, packing list only for children 0-12 months old. " 
 
 def temp_question():  #stores this in global variable temp
-	global temp
-	temp = raw_input("Is the destination's weather warm or cold? ")
-	temp = temp.lower()
-	if temp == "warm" or temp == "cold":
-		return temp
-	else:
-		"Sorry, only warm or cold weather selections available. "
+	valid_weathertemp = ['warm', 'cold']
+	global temperature8
+	while (True):
+		temp = raw_input("Is the destination's weather warm or cold? ")
+		temp = temp.lower()
+		if temp in valid_weathertemp:
+			return temp 
+			break
+		else:
+			"Sorry, only warm or cold weather selections available. "
 
 def name():
 	global child_name
