@@ -1,8 +1,8 @@
 
 # V3 - adds global variables such as temp and child age I could elminate some of the repetitive questions.
 # V3 - added while loops to add and del functions
-# V3 - adde save list function
-
+# V3 - added save list function
+# V3 - valid lists to child age and temp questions
 
 # #TO FIGURE OUT:
 # # should I use dict instead of lists? or tuples since i don't want the age and vacation list edited?
@@ -35,8 +35,8 @@ def child_age_question():	#stores this in global so I can access it later
 			print "Sorry, packing list only for children 0-12 months old. " 
 
 def temp_question():  #stores this in global variable temp
-	valid_weathertemp = ['warm', 'cold']
-	global temperature8
+	valid_weathertemp = ["warm", "cold"]
+	global temp
 	while (True):
 		temp = raw_input("Is the destination's weather warm or cold? ")
 		temp = temp.lower()
@@ -44,7 +44,7 @@ def temp_question():  #stores this in global variable temp
 			return temp 
 			break
 		else:
-			"Sorry, only warm or cold weather selections available. "
+			print "Sorry, only warm or cold weather selections available. "
 
 def name():
 	global child_name
